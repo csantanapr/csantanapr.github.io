@@ -50,7 +50,7 @@
 	            Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, <strong>scalable network application</strong>.
 	        </blockquote>
 	        <ul>
-	            <li>JavScript all the way</li>
+	            <li>JavaScript all the way</li>
 	            <li>Cross Operating Systems</li>
 	            <li>Can be debug like a Web App with Node-Inspector</li>
 	            <li>and many more goodness...</li>
@@ -268,7 +268,7 @@ $bower install
 		        </code></pre>
 	      </section>
 	      <section>
-	        <h2>Done download front-end packages</h2>
+	        <h2>Done downloading front-end packages</h2>
 	        <p>Let's check what we downloaded</p>
 	        <pre><code data-trim contenteditable>
 $tree -L 1  components/
@@ -308,7 +308,7 @@ $npm install
 		        </code></pre>
 	      </section>
 	      <section>
-	        <h2>Done download node modules</h2>
+	        <h2>Done downloading node modules</h2>
 	        <p>Let's check what we downloaded</p>
 	        <pre><code data-trim contenteditable>
 $tree -L 1  node_modules/
@@ -331,10 +331,117 @@ node_modules/
 ├── uglify-js
 	        </code></pre>
 	      </section>
+	      <section>
+		        <h2>Enough with the prerequisites !</h2>
+		        <p>Lets see GruntJS in action</p>
+		        <pre><code data-trim contenteditable>
+$grunt server
+Running "jshint:src" (jshint) task
+Running "csslint:lax" (csslint) task
+Running "htmlhint:html" (htmlhint) task
+Running "connect:livereload" (connect) task
+Running "open:server" (open) task
+Running "watch" task
+Waiting...
+		        </code></pre>
+		        <p>GruntJS is a JavaScript Task Runner</p>
+	      </section>
+	      <section>
+	      	<p>Loads a web server and watch for changes</p>
+		      <pre><code data-trim contenteditable>
+$grunt server
+	        </code></pre>
+
+		        <ul>
+		        	<li>
+		        		Lints Source Code (jshint, jslint, cssling, htmlhint)
+		        	</li>
+		        	<li>
+		        		Serves Web App from src/index.html
+		        	</li>
+		        	<li>
+		        		Opens Browser with LiveReload
+		        	</li>
+		        	<li>
+		        		Watch any file changes in src/
+		        	</li>
+		        	<li>
+		        		On file modification will lint and refresh the browser
+		        	</li>
+		        </ul>
+	      </section>
+	      <section>
+	      	<h2>Gruntfile</h2>
+	      	<p>Specify tasks, targets, leverage grunt plugins</p>
+		      <pre><code data-trim contenteditable>
+$cat Gruntfile
+dojo: {
+    dist: {
+        options: {
+            profile: 'profiles/app.profile.js',
+            appConfigFile: './<%= yeoman.app %>/config.json',
+            releaseDir: '<%= yeoman.tmp %>'
+        }
+    },
+    options: {
+        dojo: 'components/dojo/dojo.js',
+        load: 'build'
+    }
+}
+	        </code></pre>
+	      </section>
+	      <section>
+	      	<p>Run more grunt tasks</p>
+		      <pre><code data-trim contenteditable>
+$grunt lint
+$grunt build
+$grunt server:dist
+	        </code></pre>
+	      </section>
+	      <section>
+	      	<h2>Cordova CLI</h2>
+	      	<p>From Web to Native App</p>
+		      <pre><code data-trim contenteditable>
+$cordova create hybrid
+$cd hybrid
+$cordova platform add ios
+$cordova platform add android
+$cordova plugin add org.apache.cordova.core.media-capture
+$cordova prepare
+$cordova compile
+$cordova build
+$cordova emulate android
+$cordova emulate ios
+	        </code></pre>
+	      </section>
+	      <section>
+	      	<h2>Cordova and GruntJS</h2>
+	      	<p>Automate with grunt-cordovacli plugin</p>
+		      <pre><code data-trim contenteditable>
+$grunt cordova
+$grunt cordova_build
+$grunt cordova_emulate
+	        </code></pre>
+	      </section>
+	      <section>
+	      	<p>Dojox/App Framework</p>
+		        <ul>
+		        	<li>
+		        		Add View html template (src/app/views/demo/view.html)
+		        	</li>
+		        	<li>
+		        		Add View js module (src/app/views/demo/view.js)
+		        	</li>
+		        	<li>
+		        		Update App Configuration (src/app/config.json)
+		        	</li>
+		        </ul>
+	      </section>
 
         <section>
 	        <h1>Fin and Gracias</h1>
 	        <h3>BY Carlos Santana / <a href="http://twitter.com/csantanapr">@csantanapr</a></h3>
+	        <p><a href="http://csantanapr.github.io/slides">csantanapr.github.io/slides</a></p>
         </section>
 			</div><!-- end of slides -->
 
