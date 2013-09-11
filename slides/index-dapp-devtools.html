@@ -215,24 +215,26 @@ $npm update -g cordova
 		        </code></pre>
 	        </section>
         </section> <!-- end of vertical slides for software install -->
-
-				<section>
-		        <h2>Lets Get Started with Web App</h2>
-		        <p>Download the Dojox/App Boilerplate</p>
-		        <a href="http://github.com/csantanapr/dapp-boilerplate/releases">@csantanapr/dapp-boilerplate</a>
-		        <pre><code data-trim contenteditable>
+				<section><!-- start vertical slide for dapp boilerplate -->
+					<section>
+			        <h2>Lets Get Started with Web App</h2>
+			        <p>Download the Dojox/App Boilerplate</p>
+			        <a href="http://github.com/csantanapr/dapp-boilerplate/releases">@csantanapr/dapp-boilerplate</a>
+			        <pre><code data-trim contenteditable>
 $curl -L -o dapp-boilerplate.tar.gz \
 https://api.github.com/repos/csantanapr/dapp-boilerplate/tarball
 $curl -L -o dapp-boilerplate.zip \
 https://api.github.com/repos/csantanapr/dapp-boilerplate/zipball
-		        </code></pre>
-	      </section>
+			        </code></pre>
+		      </section>
 
-	      <section>
-	        <h2>Done download dapp-boilerplate</h2>
-	        <p>Let's check what we downloaded</p>
-	        <pre data-trim contenteditable>
-$tree dapp-boilerplate
+		      <section>
+		        <h2>Done download dapp-boilerplate</h2>
+		        <p>Let's check what we downloaded</p>
+		        <pre><code data-trim contenteditable>
+	$tree dapp-boilerplate
+			        </code></pre>
+		        <pre data-trim contenteditable>
 ├── Gruntfile.js
 ├── .bowerrc
 ├── bower.json
@@ -242,13 +244,17 @@ $tree dapp-boilerplate
 └── src
     ├── <strong>app/</strong>
     └── index.html
-	        </pre>
-	      </section>
-
-	      <section>
-		        <h2>Download front-end dependencies</h2>
-		        <p>Let's use Bower</p>
-		        <pre><code data-trim contenteditable>
+		        </pre>
+		      </section>
+	      </section> <!-- end vertical slide for dapp boilerplate -->
+				<section><!-- start vertical slide for bower -->
+		      <section>
+			        <h2>Download front-end dependencies</h2>
+			        <p>Let's use Bower</p>
+			        <pre><code data-trim contenteditable>
+$bower install
+			        </code></pre>
+			        <pre><code data-trim contenteditable>
 $cat bower.json
 {
   "name": "dapp-boilerplate",
@@ -265,28 +271,32 @@ $cat .bowerrc
     "directory": "components"
 }
 $bower install
-		        </code></pre>
-	      </section>
-	      <section>
-	        <h2>Done downloading front-end packages</h2>
-	        <p>Let's check what we downloaded</p>
-	        <pre><code data-trim contenteditable>
+			        </code></pre>
+		      </section>
+		      <section>
+		        <h2>Done downloading front-end packages</h2>
+		        <p>Let's check what we downloaded</p>
+		        <pre><code data-trim contenteditable>
 $tree -L 1  components/
+			      </code></pre>
+		        <pre data-trim contenteditable>
 components/
 ├── dijit
 ├── dojo
 ├── dojox
 ├── dojox_application
 └── util
-	        </code></pre>
-	      </section>
-
+		        </pre>
+		      </section>
+				</section><!-- end vertical slide for bower -->
 	      <section>
 		        <h2>Download local CLI dependencies</h2>
-		        <p>Let's use NPM</p>
+		        <p>Let's use NPM (package.json)</p>
 		        <pre><code data-trim contenteditable>
-$cat package.json
-"devDependencies": {
+$npm install
+		        </code></pre>
+		        <pre><code data-trim contenteditable class="json">
+{"devDependencies": {
     "uglify-js": "~1.3.5",
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",
@@ -303,7 +313,7 @@ $cat package.json
     "grunt-cordovacli": "~0.1.5",
     "time-grunt": "~0.1.1",
     "load-grunt-tasks": "~0.1.0"
-}
+}}
 $npm install
 		        </code></pre>
 	      </section>
@@ -311,7 +321,9 @@ $npm install
 	        <h2>Done downloading node modules</h2>
 	        <p>Let's check what we downloaded</p>
 	        <pre><code data-trim contenteditable>
-$tree -L 1  node_modules/
+$tree -L 1 node_modules/
+		      </code></pre>
+	        <pre data-trim contenteditable>
 node_modules/
 ├── connect-livereload
 ├── grunt
@@ -329,13 +341,15 @@ node_modules/
 ├── load-grunt-tasks
 ├── time-grunt
 ├── uglify-js
-	        </code></pre>
+	        </pre>
 	      </section>
 	      <section>
 		        <h2>Enough with the prerequisites !</h2>
 		        <p>Lets see GruntJS in action</p>
 		        <pre><code data-trim contenteditable>
 $grunt server
+		        </code></pre>
+		        <pre><code data-trim contenteditable>
 Running "jshint:src" (jshint) task
 Running "csslint:lax" (csslint) task
 Running "htmlhint:html" (htmlhint) task
@@ -347,12 +361,13 @@ Waiting...
 		        <p>GruntJS is a JavaScript Task Runner</p>
 	      </section>
 	      <section>
+	        <h2>Running Grunt</h2>
 	      	<p>Loads a web server and watch for changes</p>
 		      <pre><code data-trim contenteditable>
 $grunt server
 	        </code></pre>
 
-		        <ul>
+		        <ol>
 		        	<li>
 		        		Lints Source Code (jshint, jslint, cssling, htmlhint)
 		        	</li>
@@ -368,25 +383,30 @@ $grunt server
 		        	<li>
 		        		On file modification will lint and refresh the browser
 		        	</li>
-		        </ul>
+		        </ol>
 	      </section>
+
 	      <section>
 	      	<h2>Gruntfile</h2>
 	      	<p>Specify tasks, targets, leverage grunt plugins</p>
-		      <pre><code data-trim contenteditable>
-$cat Gruntfile
-dojo: {
-    dist: {
-        options: {
-            profile: 'profiles/app.profile.js',
-            appConfigFile: './<%= yeoman.app %>/config.json',
-            releaseDir: '<%= yeoman.tmp %>'
+	      	<pre><code data-trim contenteditable>
+$grunt dojo
+		      </code></pre>
+	        <pre><code data-trim contenteditable>
+{
+"dojo": {
+    "dist": {
+        "options": {
+            "profile": "profiles/app.profile.js",
+            "appConfigFile": "src/app/config.json",
+            "releaseDir": "src/.tmp"
         }
     },
-    options: {
-        dojo: 'components/dojo/dojo.js',
-        load: 'build'
+    "options": {
+        "dojo": "components/dojo/dojo.js",
+        "load": "build"
     }
+}
 }
 	        </code></pre>
 	      </section>
@@ -399,10 +419,11 @@ $grunt server:dist
 	        </code></pre>
 	      </section>
 	      <section>
-	      	<h2>Cordova CLI</h2>
+	      	<h2>Cordova CLI Flow</h2>
 	      	<p>From Web to Native App</p>
 		      <pre><code data-trim contenteditable>
 $cordova create hybrid
+$cp -r dist/www hybrid/www
 $cd hybrid
 $cordova platform add ios
 $cordova platform add android
@@ -416,28 +437,235 @@ $cordova emulate ios
 	      </section>
 	      <section>
 	      	<h2>Cordova and GruntJS</h2>
-	      	<p>Automate with grunt-cordovacli plugin</p>
+	      	<p>Automate with <a href="https://npmjs.org/package/grunt-cordovacli">grunt-cordovacli</a> plugin</p>
+		      <pre><code data-trim contenteditable>
+$cat src/app/views/demo/view.html
+	        </code></pre>
 		      <pre><code data-trim contenteditable>
 $grunt cordova
 $grunt cordova_build
 $grunt cordova_emulate
 	        </code></pre>
 	      </section>
-	      <section>
-	      	<p>Dojox/App Framework</p>
-		        <ul>
-		        	<li>
-		        		Add View html template (src/app/views/demo/view.html)
-		        	</li>
-		        	<li>
-		        		Add View js module (src/app/views/demo/view.js)
-		        	</li>
-		        	<li>
-		        		Update App Configuration (src/app/config.json)
-		        	</li>
-		        </ul>
-	      </section>
+	      <section> <!-- end vertical slides dapp -->
+		      <section>
+		      	<h2>Dojox/App (dapp) Framework</h2>
+		      	<small>
+			        <ul>
+			        	<li>
+			        		DojoToolkit.org
+									<ul>
+										<li><a href="http://dojotoolkit.org/reference-guide/1.9/dojox/app.html#dojox-app">
+										dojotoolkit.org/reference-guide/1.9/dojox/app.html#dojox-app</a></li>
+									</ul>
+			        	</li>
+								<li>
+			        		Tutorial by @edchat (Ed Chatelain)
+									<ul>
+										<li><a href="http://dojotoolkit.org/documentation/tutorials/1.9/dojox_app/contactsList/">
+										dojotoolkit.org/documentation/tutorials/1.9/dojox_app/contactsList</a></li>
+									</ul>
+			        	</li>
+			        	<li>
+			        		dApp Boilerplate (GitHub)
+									<ul>
+										<li><a href="http://github.com/csantana/dapp-boilerplate">
+										@csantana/dapp-boilerplate</a></li>
+									</ul>
+			        	</li>
+			        	<li>
+			        		Examples (GitHub)
+									<ul>
+										<li><a href="http://github.com/csantana/dapp-examples">
+										@csantana/dapp-examples</a></li>
+									</ul>
+			        	</li>
+			        	<li>
+			        		Tests&Demos (GitHub)
+									<ul>
+										<li><a href="http://github.com/dmachi/dojox_application">
+										@dmachi/dojox_application/tests/</a></li>
+									</ul>
+			        	</li>
+			        </ul>
+			       </small>
+		      </section>
+		      <section>
+		      	<h2>Modify Boilerplate Sample App (dApp)</h2>
+			        <ul>
+			        	<li>
+			        		Add View html template (view.html)
+			        	</li>
+			        	<li>
+			        		Add View js module (view.js)
+			        	</li>
+			        	<li>
+			        		Update App Configuration (config.json)
+			        	</li>
+			        </ul>
+		      </section>
+		      <section>
+		      	<h2>dApp: View Template</h2>
+		      <pre><code data-trim contenteditable>
+$cat src/app/views/demo/view.html
+	        </code></pre>
+		      <pre><code data-trim contenteditable class="html">
+<div class="view mblView">
+<h1 data-dojo-type="dojox/mobile/Heading"
+    data-dojo-props="back: 'home'">
+  Demo
+</h1>
+<ul data-dojo-type="dojox/mobile/EdgeToEdgeList">
+  <li data-dojo-type="dojox/mobile/ListItem">
+  JavaScript rocks !
+  </li>
+</ul>
+</div>
+	        </code></pre>
+		      </section>
+		      <section>
+		      	<h2>dApp: View JS Module</h2>
+		      <pre><code data-trim contenteditable>
+$cat src/app/views/demo/view.js
+	        </code></pre>
+		      <pre><code data-trim contenteditable class="javascript">
+define([
+    'dojo/text!app/views/demo/view.html',
+    'dojox/mobile/Heading',
+    'dojox/mobile/EdgeToEdgeList',
+    'dojox/mobile/ListItem'
+], function () {
+    'use strict';
+    return {
+        init: function () {
+        },
+        beforeActivate: function (previousView, data) {
+        },
+        afterActivate: function (previousView, data) {
+        },
+        beforeDeactivate: function (nextView, data) {
+        },
+        afterDeactivate: function (nextView, data) {
+        }
+    };
+});
+	        </code></pre>
+		      </section>
+		      <section>
+		      	<h2>dApp: Configuration</h2>
+		      <pre><code data-trim contenteditable>
+$cat src/app/config.js
+	        </code></pre>
+		      <pre><code data-trim contenteditable class="json">
+{"views": {
+	"demo":{
+	  "template": "app/views/demo/view.html",
+	  "controller" : "app/views/demo/view.js",
+	  "dependencies":	[
+	    "dojox/mobile/Heading",
+	    "dojox/mobile/EdgeToEdgeList",
+	    "dojox/mobile/ListItem"
+		]
+	}
+}}
+	        </code></pre>
+		      </section>
+				</section> <!-- end vertical slides dapp -->
+				<section>
+		      <h2>Emulate dApp</h2>
+		      <pre><code data-trim contenteditable>
+$grunt build_all
+$grunt cordovacli:emulate_android
+	        </code></pre>
+		    </section><section>
+		      <h2>Future dApp Boilerplate</h2>
+		      <ul>
+		      	<li>Continues Integration (CI)</li>
+		      	<!--
+		      	<ul>
+							<li>Add unit tests (Jasmine, Mocha)</li>
+							<li>Add functional testing (Webdriver API)</li>
+							<li>Hook CI using "The Intern"</li>
+						</ul>
+						-->
+						<li>Scaffolding</li>
+						<!--
+						<ul>
+							<li>Yoeman</li>
+							<li>IBM Worklight</li>
+						</ul>
+						-->
+						<li>Education resources</li>
+						<!--
+							<ul>
+								<li>Screencasts</li>
+								<li>Tutorials</li>
+							</ul>
+							-->
+					</ul>
+		    </section>
+				<section>
+		      	<h2>Today's Picks</h2>
+			        <small>
+			        <ul>
+			          <li>
+			        		NC DevConf September 21-22 2013
+									<ul>
+										<li><a href="http://www.ncdevcon.com/">
+										ncdevcon.com</a></li>
+									</ul>
+			        	</li>
+			          <li>
+			        		SPAJS.io (Sinple Page App Blog)
+									<ul>
+										<li><a href="http://spajs.io">
+										spajs.io</a></li>
+									</ul>
+			        	</li>
 
+								<li>
+			        		Local Meetups (Hack/Dev/Design/Civic)
+									<ul>
+										<li><a href="http://www.meetup.com">
+										meetup.com</a></li>
+									</ul>
+			        	</li>
+			        	<li>
+			        		Online Books (Safari Books Online)
+									<ul>
+										<li><a href="http://www.safaribooksonline.com/">
+										safaribooksonline.com</a></li>
+									</ul>
+			        	</li>
+			        	<li>
+			        		Online Videos
+									<ul>
+										<li>
+											 YouTube Channels: <a href="http://www.youtube.com/user/GoogleDevelopers">
+											GoogleDevelopers</a>
+											, <a href="http://www.youtube.com/user/PhoneGap">
+											PhoneGap</a>
+											, <a href="http://www.youtube.com/user/jsconfeu">
+											JSConf</a>
+										</li>
+										<li>Orelly
+										<a href="http://bit.ly/1d5WGJ7">Fluent</a>
+										and
+										<a href="http://bit.ly/1eEdqZP">Velocity</a>
+										2013 Conferences Videos
+										</li>
+									</ul>
+			        	</li>
+			        	<li>
+			        		RevealJS
+									<ul>
+										<li><a href="http://www.safaribooksonline.com/">
+										@hakimel/reveal.js</a></li>
+									</ul>
+			        	</li>
+			        </ul>
+			        </small>
+		      </section>
         <section>
 	        <h1>Fin and Gracias</h1>
 	        <h3>BY Carlos Santana / <a href="http://twitter.com/csantanapr">@csantanapr</a></h3>
