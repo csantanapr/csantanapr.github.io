@@ -92,50 +92,37 @@
 	        </aside>
         </section>
         <section>
-	        <h2>NodeJS: Command Line Interfaces (CLI)</h2>
-	            <ul>
-	              <li>
-	                    NPM
-	                    <ul>
-	                    <li>
-	                    <a href="https://npmjs.org">https://npmjs.org</a>
-	                    </li>
-	                    </ul>
-	                </li>
-	                <li>
-	                    Bower
-	                    <ul>
-	                    <li>
-	                    <a href="http://bower.io">http://bower.io</a>
-	                    </li>
-	                    </ul>
-	                </li>
-	                <li>
-	                    GruntJS
-	                    <ul>
-	                    <li>
-	                    <a href="http://gruntjs.com">http://gruntjs.com</a>
-	                    </li>
-	                    </ul>
-	                </li>
-	                <li>
-	                    Cordova
-	                    <ul>
-	                    <li>
-	                    <a href="http://cordova.io">http://cordova.io</a>
-	                    </li>
-	                    </ul>
-	                </li>
-	                <li>
-	                    Yeoman
-	                    <ul>
-	                    <li>
-	                    <a href="http://yeoman.io">http://yeoman.io</a>
-	                    </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	        <aside class="notes">
+	      	<h2>NodeJS: Command Line Interfaces (CLI)</h2>
+	      	<ul>
+
+	      	<li>
+		      	<img class="image" style="height:60px;vertical-align:middle" src="img/devtools/npm.png" alt="npm">
+		      	<a href="http://npmjs.org">npmjs.org</a>
+	      	</li>
+
+	      	<li>
+		      	<img class="image" style="height:60px;vertical-align:middle" src="img/devtools/bower-logo.png" alt="bower">
+		      	<a href="http://bower.io<">bower.io</a>
+	      	</li>
+
+	      	<li>
+		      	<img class="image" style="height:60px;vertical-align:middle" src="img/devtools/grunt-logo.png" alt="gruntjs">
+		      	<a href="http://gruntjs.com<">gruntjs.com</a>
+	      	</li>
+
+	      	<li>
+		      	<img class="image" style="height:60px;vertical-align:middle" src="img/devtools/cordova_bot.png" alt="cordova">
+		      	<a href="http://cordova.io<">cordova.io</a>
+	      	</li>
+
+	      	<li>
+		      	<img class="image" style="height:60px;vertical-align:middle" src="img/devtools/yeoman-logo.png" alt="cordova">
+		      	<a href="http://yeoman.io<">yeoman.io</a>
+	      	</li>
+
+					</ul>
+
+					<aside class="notes">
 	            JavaScript being use to create cli tools, similar to ant, shell, bash, batch, perl, python
 	            But now on JavaScript, One of way of re-using the programing language that the Web developer is already familiar
 	            TODO: add images to this slide
@@ -207,8 +194,6 @@ $cordova -v
 		        <h2>Upgrading Software</h2>
 		        <p>Upgrading is as easy as installing using npm</p>
 		        <pre><code data-trim contenteditable>
-$npm update -g node
-$npm update -g npm
 $npm update -g bower
 $npm update -g grunt-cli
 $npm update -g cordova
@@ -259,11 +244,11 @@ $cat bower.json
 {
   "name": "dapp-boilerplate",
   "dependencies": {
-    "dojox": "dojo/dojox",
-    "dojo" : "dojo/dojo",
-    "dijit": "dojo/dijit",
-    "util" : "dojo/util",
-    "dojox_application": "dmachi/dojox_application"
+    "dojox": "dojo/dojox#1.9.1",
+    "dojo" : "dojo/dojo#1.9.1",
+    "dijit": "dojo/dijit#1.9.1",
+    "util" : "dojo/util#1.9.1",
+    "dojox_application": "dmachi/dojox_application#dojo191"
   }
 }
 $cat .bowerrc
@@ -277,7 +262,7 @@ $bower install
 		        <h2>Done downloading front-end packages</h2>
 		        <p>Let's check what we downloaded</p>
 		        <pre><code data-trim contenteditable>
-$tree -L 1  components/
+$tree -L 1 components/
 			      </code></pre>
 		        <pre data-trim contenteditable>
 components/
@@ -627,6 +612,15 @@ $ grunt server
 										ncdevcon.com</a></li>
 									</ul>
 			        	</li>
+
+			        	<li>
+			        		Local Meetups (Hack/Dev/Design/Civic)
+									<ul>
+										<li><a href="http://www.meetup.com">
+										meetup.com</a></li>
+									</ul>
+			        	</li>
+
 			          <li>
 			        		SPAJS.io (Single Page App Blog)
 									<ul>
@@ -636,21 +630,32 @@ $ grunt server
 			        	</li>
 
 								<li>
-			        		Local Meetups (Hack/Dev/Design/Civic)
+			        		Podcasts
 									<ul>
-										<li><a href="http://www.meetup.com">
-										meetup.com</a></li>
+										<li>
+											<a href="http://javascriptjabber.com">JS Jabber </a>
+											, <a href="http://upfrontpodcast.com">
+											Upfront </a>
+											, <a href="http://nodeup.com">
+											NodeUp </a>
+											, <a href="http://fsm.bdconf.com/podcast">
+											Breaking Development </a>
+										</li>
+
 									</ul>
 			        	</li>
+
+
 			        	<li>
-			        		On-line Books (Safari Books Online)
+			        		Books (Safari Books Online)
 									<ul>
 										<li><a href="http://www.safaribooksonline.com/">
 										safaribooksonline.com</a></li>
 									</ul>
 			        	</li>
+
 			        	<li>
-			        		On-line Videos
+			        		Videos
 									<ul>
 										<li>
 											 YouTube Channels: <a href="http://www.youtube.com/user/GoogleDevelopers">
@@ -668,6 +673,7 @@ $ grunt server
 										</li>
 									</ul>
 			        	</li>
+
 			        	<li>
 			        		RevealJS
 									<ul>
@@ -681,7 +687,7 @@ $ grunt server
         <section>
 	        <h1>Fin and Gracias</h1>
 	        <h3>BY Carlos Santana / <a href="http://twitter.com/csantanapr">@csantanapr</a></h3>
-	        <p><a href="http://csantanapr.github.io/slides">csantanapr.github.io/slides</a></p>
+	        <p>Slides: <a href="http://csantana.io">csantana.io</a></p>
         </section>
 			</div><!-- end of slides -->
 
