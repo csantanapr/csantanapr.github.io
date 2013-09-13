@@ -537,7 +537,7 @@ define([
 		      <section>
 		      	<h2>dApp: Configuration</h2>
 		      <pre><code data-trim contenteditable>
-$cat src/app/config.js
+$cat src/app/config.json
 	        </code></pre>
 		      <pre><code data-trim contenteditable class="json">
 {"views": {
@@ -593,12 +593,13 @@ $grunt cordovacli:emulate_android
 		      <p>dApp Yeoman Generator!</p>
 		      		      <pre><code data-trim contenteditable>
 $ npm install -g yo
-$ npm install -g generator-dapp
+$ npm install -g generator-dude
 	        </code></pre>
 		      <pre><code data-trim contenteditable>
 $ mkdir ~/dev/my-app && cd $_
-$ yo dapp
+$ yo dude
 $ grunt server
+$ grunt demo
 	        </code></pre>
 		    </section>
 				<section>
