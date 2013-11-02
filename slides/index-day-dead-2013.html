@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>csantanapr - NCDevFest 2013</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Carlos Santana">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+	        <h2>Dia de lost Muertos</h2>
+	        <h3>Building Mobile Web Apps Made Easier</h3>
+	        <p>
+	            <small>Created by <a href="http://csantana.io">Carlos Santana</a> / <a href="http://twitter.com/csantanapr">@csantanapr</a></small>
+	        </p>
+        </section>
+        <section>
+		    	<h3>Whow is Carlos Santana?</h3>
+		      <pre><code data-trim contenteditable class="javacript">
+carlos = {
+"musician" : false,
+"company": "IBM",
+"careers" : ["Server Engineer", "Mobile Developer", "Open Source Committer"],
+"dependencies":	{
+  "Family",
+  "Gadgets",
+  "Software"
+},
+"ethnicity": "geek",
+"languages": ["spanish","english","javascript"],
+"loves what it does": true,
+"In 5 years": "function () { [native code] }"
+};
+	        </code></pre>
+		      </section>
+        <section>
+		      <h2>2 Problems One Road</h2>
+		      <ul>
+		      	<li>
+		      	Automating Web Dev
+		      	</li>
+		      	<li>
+		      	Automating Hybrid Dev
+		      	</li>
+		      </ul>
+	      </section>
+	      <section>
+		      <h2>DON'T JUST COMPLAINT, FIX IT!</h2>
+		      <h3>"Yo dude"</h3>
+	      </section>
+        <section>
+	        <h2>NodeJS</h2>
+	        <a href="http://nodejs.org">http://nodejs.org</a>
+	        <blockquote cite="http://nodejs.org">
+	            Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, <strong>scalable network application</strong>.
+	        </blockquote>
+	        <ul>
+	            <li>JavaScript all the way</li>
+	            <li>Cross Operating Systems</li>
+	            <li>Can be debug like a Web App with Node-Inspector</li>
+	            <li>and many more goodness...</li>
+	        <ul>
+
+	        <aside class="notes">
+	            Node its an easy way to run JavaScript other than using a Browser, to code Back end services using JavaScript,
+	            but there are other uses of Node in the wild.
+	            By the way NodeJS is cross platform, Windows, Mac, Linux.
+
+	        </aside>
+        </section>
+        <section>
+	        <h2>NodeJS: Hardware Hacking</h2>
+	        <ul>
+	            <li>Arduino
+	                <ul>
+	                    <li>
+	                        <a href="http://semu.github.io/noduino">@semu/noduino</a>
+	                    </li>
+	                    <li>
+	                        <a href="https://github.com/ecto/duino">@ecto/duino</a>
+	                    </li>
+	                    <li>
+	                        <a href="https://github.com/rwaldron/johnny-five">@rwaldron/johnny-five</a>
+	                    </li>
+	                </ul>
+	            </li>
+
+	            <li>Tessel
+	                <a href="http://technical.io/">http://technical.io</a>
+	            </li>
+	            <li>Raspberry Pi (Node on linux !)</li>
+	        </ul>
+
+	        <aside class="notes">
+	            JavaScript being use for hardware projects
+	            TODO: add images to this slide
+	        </aside>
+        </section>
+        <section>
+	      	<h2>NodeJS: Command Line Interfaces (CLI)</h2>
+	      	<ul>
+
+	      	<li>
+		      	<img class="image" style="height:60px;vertical-align:middle" src="img/devtools/npm.png" alt="npm">
+		      	<a href="http://npmjs.org">npmjs.org</a>
+	      	</li>
+
+	      	<li>
+		      	<img class="image" style="height:60px;vertical-align:middle" src="img/devtools/bower-logo.png" alt="bower">
+		      	<a href="http://bower.io<">bower.io</a>
+	      	</li>
+
+	      	<li>
+		      	<img class="image" style="height:60px;vertical-align:middle" src="img/devtools/grunt-logo.png" alt="gruntjs">
+		      	<a href="http://gruntjs.com<">gruntjs.com</a>
+	      	</li>
+
+	      	<li>
+		      	<img class="image" style="height:60px;vertical-align:middle" src="img/devtools/yeoman-logo.png" alt="cordova">
+		      	<a href="http://yeoman.io<">yeoman.io</a>
+	      	</li>
+
+	      	<li>
+		      	<img class="image" style="height:60px;vertical-align:middle" src="img/devtools/cordova_bot.png" alt="cordova">
+		      	<a href="http://cordova.io<">cordova.io</a>
+	      	</li>
+
+					</ul>
+
+					<aside class="notes">
+	            JavaScript being use to create cli tools, similar to ant, shell, bash, batch, perl, python
+	            But now on JavaScript, One of way of re-using the programing language that the Web developer is already familiar
+	            TODO: add images to this slide
+	        </aside>
+        </section>
+
+        <section> <!-- Vertical slides for software installs -->
+	        <section>
+		        <h2>Install Node</h2>
+		        <p>
+		            Download and Install Node
+		            <a href="http://nodejs.org/download">http://nodejs.org/download</a>
+		        </p>
+		        <pre><code data-trim contenteditable>
+$node -v
+v0.10.18
+		        </code></pre>
+	        </section>
+	        <section>
+		        <h2>Install NPM</h2>
+		        <p>
+		            Super Easy Install: npm comes with node now.
+		        </p>
+
+		        <pre><code data-trim contenteditable>
+$npm -v
+v1.3.8
+		        </code></pre>
+		        <p>
+		        		For other alternatives: <a href="https://github.com/isaacs/npm">@isaacs/npm</a>
+		        </p>
+	        </section>
+	        <section>
+		        <h2>Install Bower</h2>
+		        <p>Install bower using npm</p>
+		        <pre><code data-trim contenteditable>
+$npm install -g bower
+$bower -v
+1.2.6
+		        </code></pre>
+	        </section>
+	        <section>
+		        <h2>Install GruntJS</h2>
+		        <p>Install grunt-cli* using npm</p>
+		        <pre><code data-trim contenteditable>
+$npm install -g grunt-cli
+$grunt
+grunt-cli: The grunt command line interface. (v0.1.9)
+
+Fatal error: Unable to find local grunt.
+		        </code></pre>
+		        <small>
+		        		*This error message is OK, grunt-cli is a wrapper that looks and runs grunt locally
+		        </small>
+		        <aside class="notes">
+		            Grunt is not installed globally, this allows different versions of grunt to be use on the same system
+		        </aside>
+	        </section>
+	        <section>
+		        <h2>Install Yeoman</h2>
+		        <p>Install yo using npm</p>
+		        <pre><code data-trim contenteditable>
+$npm install -g yo
+$yo -v
+1.0.4
+		        </code></pre>
+	        </section>
+	        <section>
+		        <h2>Install Yeoman Generator Dude</h2>
+		        <p>Install yo using npm</p>
+		        <pre><code data-trim contenteditable>
+$npm install -g generator-dude
+$npm list -g generator-dude
+└── generator-dude@0.1.4
+		        </code></pre>
+	        </section>
+	        <section>
+		        <h2>Upgrading Software</h2>
+		        <p>Upgrading is as easy as installing using npm</p>
+		        <pre><code data-trim contenteditable>
+$npm update -g bower
+$npm update -g grunt-cli
+$npm update -g yo
+$npm update -g generator-dude
+		        </code></pre>
+	        </section>
+        </section> <!-- end of vertical slides for software install -->
+				<section><!-- start vertical slide for dapp boilerplate -->
+				  <section>
+		      	<h2>Cordova CLI Flow</h2>
+		      	<p>From Web to Native App</p>
+			      <pre><code data-trim contenteditable>
+$cordova create hybrid
+$cp -r dist/www hybrid/www
+$cd hybrid
+$cordova platform add ios
+$cordova platform add android
+$cordova plugin add org.apache.cordova.core.media-capture
+$cordova prepare
+$cordova compile
+$cordova build
+$cordova emulate android
+$cordova emulate ios
+	          </code></pre>
+	        </section>
+	        <section>
+		      	<h2>Cordova Plugins</h2>
+		      	<p>Modular System for Features</p>
+			      <ul>
+			      	<li>
+			      	Apache Cordova Core APIs
+			      	</li>
+			      	<li>
+			      	Chrome Package Apps APIs
+			      	</li>
+			      	<li>
+			      	BlackBerry WebWorks APIs
+			      	</li>
+			      </ul>
+			      <p>Check out more <a href="plugins.cordova.io">plugins.cordova.io</a></p>
+	        </section>
+					<section>
+			        <h2>Lets Run Yo Dude</h2>
+			        <pre><code data-trim contenteditable>
+$yo dude
+			        </code></pre>
+		      </section>
+
+		      <section>
+			        <h2>Answer a few Prompts</h2>
+			        <pre><code data-trim contenteditable>
+-
+     _-----_
+    |       |
+    |--(o)--|   .--------------------------.
+   `---------´  |    Welcome to Yeoman,    |
+    ( _´U`_ )   |   ladies and gentlemen!  |
+    /___A___\   '__________________________'
+     |  ~  |
+   __'.___.'__
+ ´   `  |° ´ Y `
+
+[?] What do you want to name your App? (dude)
+			        </code></pre>
+		      </section>
+
+		      <section>
+		        <h2>You got Dude </h2>
+		        <pre><code data-trim contenteditable>
+	$tree -L 1
+			        </code></pre>
+		        <pre data-trim contenteditable>
+├── Gruntfile.js
+├── LICENSE
+├── bower.json
+├── bower_components/
+├── node_modules/
+├── package.json
+├── profiles/
+└── src
+    ├── <strong>app/</strong>
+    └── index.html
+		        </pre>
+		      </section>
+	      </section> <!-- end vertical slide for dapp boilerplate -->
+				<section><!-- start vertical slide for bower -->
+		      <section>
+			        <h2>Download front-end dependencies</h2>
+			        <p>Using Bower</p>
+			        <pre><code data-trim contenteditable>
+$bower install
+			        </code></pre>
+			        <pre><code data-trim contenteditable>
+$cat bower.json
+{
+  "name": "dapp-boilerplate",
+  "dependencies": {
+    "dojox": "dojo/dojox#1.9.1",
+    "dojo" : "dojo/dojo#1.9.1",
+    "dijit": "dojo/dijit#1.9.1",
+    "util" : "dojo/util#1.9.1",
+    "dojox_application": "dmachi/dojox_application#dojo191"
+  }
+}
+			        </code></pre>
+		      </section>
+				</section><!-- end vertical slide for bower -->
+				<section> <!-- start vertical slides for npm -->
+		      <section>
+			        <h2>Download local CLI dependencies</h2>
+			        <p>Using NPM</p>
+			        <pre><code data-trim contenteditable>
+$npm install
+			        </code></pre>
+			        <pre><code data-trim contenteditable class="json">
+$cat package.json
+{"devDependencies": {
+    "uglify-js": "~1.3.5",
+    "grunt-dojo": "~0.2.4",
+    "grunt-cordovacli": "~0.2.0",
+
+    "grunt": "~0.4.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-csslint": "~0.1.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-contrib-watch": "~0.5.2",
+    "grunt-jslint": "~1.0.0",
+    "grunt-htmlhint": "~0.4.0",
+    "connect-livereload": "~0.2.0",
+    "grunt-open": "~0.2.2",
+    "time-grunt": "~0.1.1",
+    "load-grunt-tasks": "~0.1.0"
+  },}
+			        </code></pre>
+		      </section>
+		      <section>
+		        <h2>Done downloading node modules</h2>
+		        <p>Let's check what we downloaded</p>
+		        <pre><code data-trim contenteditable>
+$tree -L 1 node_modules/
+			      </code></pre>
+		        <pre data-trim contenteditable>
+node_modules/
+├── connect-livereload
+├── grunt
+├── grunt-contrib-clean
+├── grunt-contrib-connect
+├── grunt-contrib-copy
+├── grunt-contrib-csslint
+├── grunt-contrib-jshint
+├── grunt-contrib-watch
+├── grunt-cordovacli
+├── grunt-dojo
+├── grunt-htmlhint
+├── grunt-jslint
+├── grunt-open
+├── load-grunt-tasks
+├── time-grunt
+├── uglify-js
+		        </pre>
+		      </section>
+	      </section> <!-- end vertical slides for npm -->
+	      <section>
+		        <h2>Enough with the prerequisites !</h2>
+		        <p>Lets see GruntJS in action</p>
+		        <pre><code data-trim contenteditable>
+$grunt demo
+		        </code></pre>
+						<ol>
+							<li>
+							Lint
+							</li>
+							<li>
+							Build WebApp
+							</li>
+							<li>
+							Create Cordova Project
+							</li>
+							<li>
+							Add Cordova Platforms and Plugins
+							</li>
+							<li>
+							Build Native App
+							</li>
+							<li>
+							Run Simulator
+							</li>
+						</ol>
+	      </section>
+	      <section>
+		        <h2>Loving the Watch Task</h2>
+		        <p>1 minutes scenario Native App</p>
+		        <pre><code data-trim contenteditable>
+$grunt server:cordova
+		        </code></pre>
+		        <pre><code data-trim contenteditable>
+Running "build:all" task
+Running "emulate" task
+Running "watch:cordova" task
+Waiting...
+		        </code></pre>
+		        <p>GruntJS is a JavaScript Task Runner</p>
+	      </section>
+	      <section>
+		        <h2>Loving the Watch Task</h2>
+		        <p>15 seconds scenario Built App</p>
+		        <pre><code data-trim contenteditable>
+$grunt server:dist
+		        </code></pre>
+		        <pre><code data-trim contenteditable>
+Running "build:dist" task
+Running "connect:dist" task
+Running "open:dist" task
+Running "watch:dist" task
+		        </code></pre>
+	      </section>
+	      <section>
+		        <h2>Loving the Watch Task</h2>
+		        <p>1 seconds scenario Built App</p>
+		        <pre><code data-trim contenteditable>
+$grunt server
+		        </code></pre>
+		        <pre><code data-trim contenteditable>
+Running "lint" task
+Running "connect:src" task
+Running "open:src" task
+Running "watch:src" task
+		        </code></pre>
+	      </section>
+	      <section>
+	      	<p>Run other grunt tasks</p>
+		      <pre><code data-trim contenteditable>
+$grunt lint
+$grunt build
+$grunt server:dist
+	        </code></pre>
+	      </section>
+
+	      <section> <!-- end vertical slides dapp -->
+		      <section>
+		      	<h2>Dojox/App (dapp) Framework</h2>
+		      	<small>
+			        <ul>
+			        	<li>
+			        		DojoToolkit.org
+									<ul>
+										<li><a href="http://dojotoolkit.org/reference-guide/1.9/dojox/app.html#dojox-app">
+										dojotoolkit.org/reference-guide/1.9/dojox/app.html#dojox-app</a></li>
+									</ul>
+			        	</li>
+								<li>
+			        		Tutorial by @edchat (Ed Chatelain)
+									<ul>
+										<li><a href="http://dojotoolkit.org/documentation/tutorials/1.9/dojox_app/contactsList/">
+										dojotoolkit.org/documentation/tutorials/1.9/dojox_app/contactsList</a></li>
+									</ul>
+			        	</li>
+			        	<li>
+			        		dApp Boilerplate (GitHub)
+									<ul>
+										<li><a href="http://github.com/csantana/dapp-boilerplate">
+										@csantana/dapp-boilerplate</a></li>
+									</ul>
+			        	</li>
+			        	<li>
+			        		Examples (GitHub)
+									<ul>
+										<li><a href="http://github.com/csantana/dapp-examples">
+										@csantana/dapp-examples</a></li>
+									</ul>
+			        	</li>
+			        	<li>
+			        		Tests&Demos (GitHub)
+									<ul>
+										<li><a href="http://github.com/dmachi/dojox_application">
+										@dmachi/dojox_application/tests/</a></li>
+									</ul>
+			        	</li>
+			        </ul>
+			       </small>
+		      </section>
+
+				</section> <!-- end vertical slides dapp -->
+				<section>
+		      	<h2>Today's Picks</h2>
+			        <ul>
+			          <li>
+			        		Apache Cordova
+									<ul>
+										<li><a href="http://cordova.io/">
+										cordova.io</a></li>
+									</ul>
+			        	</li>
+
+			        	<li>
+			        		Local Meetups (Hack/Dev/Design/Civic)
+									<ul>
+										<li><a href="http://www.meetup.com">
+										meetup.com</a></li>
+									</ul>
+			        	</li>
+
+			        	<li>
+			        		Videos
+									<ul>
+										<li>
+											 YouTube Channels: <a href="http://www.youtube.com/user/GoogleDevelopers">
+											GoogleDevelopers</a>
+											, <a href="http://www.youtube.com/user/PhoneGap">
+											PhoneGap</a>
+											, <a href="http://www.youtube.com/user/jsconfeu">
+											JSConf</a>
+										</li>
+										<li>Orelly
+										<a href="http://bit.ly/1d5WGJ7">Fluent</a>
+										and
+										<a href="http://bit.ly/1eEdqZP">Velocity</a>
+										2013 Conferences Videos
+										</li>
+									</ul>
+			        	</li>
+
+			        	<li>
+			        		RevealJS
+									<ul>
+										<li><a href="http://www.safaribooksonline.com/">
+										@hakimel/reveal.js</a></li>
+									</ul>
+			        	</li>
+			        </ul>
+		      </section>
+        <section>
+	        <h1>Fin and Gracias</h1>
+	        <h3>BY Carlos Santana / <a href="http://twitter.com/csantanapr">@csantanapr</a></h3>
+	        <p>Slides: <a href="http://csantana.io">csantana.io</a></p>
+        </section>
+			</div><!-- end of slides -->
+
+		</div><!-- end of reveal -->
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
