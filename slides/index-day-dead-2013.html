@@ -45,38 +45,138 @@
         </section>
         <section>
 		    	<h3>Whow is Carlos Santana?</h3>
-		      <pre><code data-trim contenteditable class="javacript">
-carlos = {
+		      <pre><code data-trim contenteditable class="javascript">
 "musician" : false,
 "company": "IBM",
-"careers" : ["Server Engineer", "Mobile Developer", "Open Source Committer"],
-"dependencies":	{
-  "Family",
-  "Gadgets",
-  "Software"
+"careers" : [
+    "Server Engineer",
+    "Mobile Developer",
+    "Open Source Committer"
+],
+"dependencies": {
+                  "Family":   "~1.0",
+                  "Gadgets":  "~0.1",
+                  "Software": "~0.2"
 },
 "ethnicity": "geek",
 "languages": ["spanish","english","javascript"],
 "loves what it does": true,
 "In 5 years": "function () { [native code] }"
-};
 	        </code></pre>
 		      </section>
-        <section>
+
+	      <section> <!-- start vertical slides -->
+	      <section>
 		      <h2>2 Problems One Road</h2>
 		      <ul>
 		      	<li>
-		      	Automating Web Dev
+		      	Automating Web Dev Workflow
 		      	</li>
 		      	<li>
-		      	Automating Hybrid Dev
+		      	Automating Hybrid Dev Worklow
 		      	</li>
 		      </ul>
 	      </section>
 	      <section>
 		      <h2>DON'T JUST COMPLAINT, FIX IT!</h2>
-		      <h3>"Yo dude"</h3>
 	      </section>
+	      <section>
+		      	<h2>Dojox/App (dapp) Framework</h2>
+		      	<small>
+			        <ul>
+			        	<li>
+			        		DojoToolkit.org
+									<ul>
+										<li><a href="http://dojotoolkit.org/reference-guide/1.9/dojox/app.html#dojox-app">
+										dojotoolkit.org/reference-guide/1.9/dojox/app.html#dojox-app</a></li>
+									</ul>
+			        	</li>
+								<li>
+			        		Tutorial by @edchat (Ed Chatelain)
+									<ul>
+										<li><a href="http://dojotoolkit.org/documentation/tutorials/1.9/dojox_app/contactsList/">
+										dojotoolkit.org/documentation/tutorials/1.9/dojox_app/contactsList</a></li>
+									</ul>
+			        	</li>
+			        	<li>
+			        		dApp Boilerplate (GitHub)
+									<ul>
+										<li><a href="http://github.com/csantana/dapp-boilerplate">
+										@csantana/dapp-boilerplate</a></li>
+									</ul>
+			        	</li>
+			        	<li>
+			        		Examples (GitHub)
+									<ul>
+										<li><a href="http://github.com/csantana/dapp-examples">
+										@csantana/dapp-examples</a></li>
+									</ul>
+			        	</li>
+			        	<li>
+			        		Tests&Demos (GitHub)
+									<ul>
+										<li><a href="http://github.com/dmachi/dojox_application">
+										@dmachi/dojox_application/tests/</a></li>
+									</ul>
+			        	</li>
+			        </ul>
+			       </small>
+		    </section>
+		    <section>
+		    <h2>Apacahe Cordova/PhoneGap</h2>
+		    <p>Apache Cordova is a platform
+           for building native mobile
+           applications using HTML, CSS
+           and JavaScript <a href="cordova.io">cordova.io</a> </p>
+		    <ul>
+		    	<li>
+		    	New version 3.x CLI based using NodeJS
+		    	</li>
+		    	<li>
+		    	Cordova Project Directory
+			    	<ul>
+			    	<li>
+			    	Focus on Cross Platform Web Development
+			    	</li>
+			    	</ul>
+		    	</li>
+		    	<li>
+		    	Platforms:
+			    	<ul>
+			    	<li>
+			    	Android, iOS, BB10, WP8, Win8, FFXOS*, UBUNTU*,...
+			    	</li>
+			    	</ul>
+		    	</li>
+		    	<li>
+		    	Plugins:
+		    	  <ul>
+			    	<li>
+			    	Device, File, Contacts, Media, Chromium, ...
+			    	</li>
+			    	</ul>
+		    	</li>
+		    </ul>
+		    </section>
+		    <section>
+		      	<h2>Cordova CLI Flow</h2>
+		      	<p>From Web to Native App</p>
+			      <pre><code data-trim contenteditable>
+$cordova create hybrid
+$cp -r dist/www hybrid/www
+$cd hybrid
+$cordova platform add ios
+$cordova platform add android
+$cordova plugin add org.apache.cordova.core.media-capture
+$cordova prepare
+$cordova compile
+$cordova build
+$cordova emulate android
+$cordova emulate ios
+	          </code></pre>
+	          <li>grunt-cordovacli (@csantanapr)</li>
+	        </section>
+		    </section> <!-- - end of vertical slides -->
         <section>
 	        <h2>NodeJS</h2>
 	        <a href="http://nodejs.org">http://nodejs.org</a>
@@ -245,23 +345,7 @@ $npm update -g generator-dude
 	        </section>
         </section> <!-- end of vertical slides for software install -->
 				<section><!-- start vertical slide for dapp boilerplate -->
-				  <section>
-		      	<h2>Cordova CLI Flow</h2>
-		      	<p>From Web to Native App</p>
-			      <pre><code data-trim contenteditable>
-$cordova create hybrid
-$cp -r dist/www hybrid/www
-$cd hybrid
-$cordova platform add ios
-$cordova platform add android
-$cordova plugin add org.apache.cordova.core.media-capture
-$cordova prepare
-$cordova compile
-$cordova build
-$cordova emulate android
-$cordova emulate ios
-	          </code></pre>
-	        </section>
+
 	        <section>
 		      	<h2>Cordova Plugins</h2>
 		      	<p>Modular System for Features</p>
@@ -277,6 +361,18 @@ $cordova emulate ios
 			      	</li>
 			      </ul>
 			      <p>Check out more <a href="plugins.cordova.io">plugins.cordova.io</a></p>
+	        </section>
+	        <section>
+		      	<h2>More Cordova Plugins</h2>
+		      	<p>Modular System for Features</p>
+			      <ul>
+			      	<li>org.chromium.identity</li>
+							<li>org.chromium.notifications</li>
+							<li>org.chromium.socket</li>
+							<li>org.chromium.storage (chrome.storage.local and chrome.storage.sync)</li>
+							<li>org.chromium.syncfilesystem</li>
+			      </ul>
+
 	        </section>
 					<section>
 			        <h2>Lets Run Yo Dude</h2>
@@ -478,48 +574,7 @@ $grunt server:dist
 	      </section>
 
 	      <section> <!-- end vertical slides dapp -->
-		      <section>
-		      	<h2>Dojox/App (dapp) Framework</h2>
-		      	<small>
-			        <ul>
-			        	<li>
-			        		DojoToolkit.org
-									<ul>
-										<li><a href="http://dojotoolkit.org/reference-guide/1.9/dojox/app.html#dojox-app">
-										dojotoolkit.org/reference-guide/1.9/dojox/app.html#dojox-app</a></li>
-									</ul>
-			        	</li>
-								<li>
-			        		Tutorial by @edchat (Ed Chatelain)
-									<ul>
-										<li><a href="http://dojotoolkit.org/documentation/tutorials/1.9/dojox_app/contactsList/">
-										dojotoolkit.org/documentation/tutorials/1.9/dojox_app/contactsList</a></li>
-									</ul>
-			        	</li>
-			        	<li>
-			        		dApp Boilerplate (GitHub)
-									<ul>
-										<li><a href="http://github.com/csantana/dapp-boilerplate">
-										@csantana/dapp-boilerplate</a></li>
-									</ul>
-			        	</li>
-			        	<li>
-			        		Examples (GitHub)
-									<ul>
-										<li><a href="http://github.com/csantana/dapp-examples">
-										@csantana/dapp-examples</a></li>
-									</ul>
-			        	</li>
-			        	<li>
-			        		Tests&Demos (GitHub)
-									<ul>
-										<li><a href="http://github.com/dmachi/dojox_application">
-										@dmachi/dojox_application/tests/</a></li>
-									</ul>
-			        	</li>
-			        </ul>
-			       </small>
-		      </section>
+
 
 				</section> <!-- end vertical slides dapp -->
 				<section>
