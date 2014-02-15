@@ -215,6 +215,7 @@ $cordova help
 			<img style="margin-top:0px"width="500" height="500" src="img/cordova/cordova-help.png" alt="cordova help text">
 		  </a>
 	    </section> <!-- end cordova help -->
+
 	    <section> <!-- start cordova create -->
 	      	<h3>Step 1: Create Multi Platform Project</h3>
 		    <pre><code data-trim contenteditable style="max-height:500px">
@@ -240,6 +241,79 @@ $cd todd; tree todd
         └── index.js
 	      </code></pre>
 	    </section> <!-- end cordova help -->
+
+
+		<section> <!-- start platform requirements-->
+	      	<h2>Check Platform requirements</h2>
+			<ul>
+				<li>iOS: Mac and iOS SDK with XCode CLI Tools</li>
+	        	<li>Android: Android SDK</li>
+	        	<li>WP8: Windows8 and Windows Phone 8 SDK</li>
+		    </ul>
+	    </section> <!-- end  platform requirements-->
+
+	    <section> <!-- start ios requirements-->
+	      	<h3>Check iOS requirements</h3>
+		    <pre><code data-trim contenteditable style="max-height:500px">
+$ xcodebuild --help
+	      </code></pre>
+	      <small>Download XCode from Mac App Store</small>
+	      <pre><code data-trim contenteditable style="max-height:500px">
+$ npm install -g ios-sim
+$ ios-sim --version
+$ 1.8.2
+	      </code></pre>
+	      <small>To Run App on iOS Simulator, instead of XCode GUI</small>
+	      	      <pre><code data-trim contenteditable style="max-height:500px">
+$ npm install -g ios-deploy
+$ ios-deploy --version
+$ 1.0.4
+	      </code></pre>
+	      <small>To Run App on Device, instead of XCode GUI</small>
+	    </section> <!-- end  ios requirements-->
+
+	    <section> <!-- start android requirements-->
+	      <h3>Check Android requirements</h3>
+		  <pre><code data-trim contenteditable style="max-height:500px">
+$ ant -version
+	      </code></pre>
+	      <small>Get Ant from <a href="http://ant.apache.org" target="_blank">http://ant.apache.org</a></small>
+	      <pre><code data-trim contenteditable style="max-height:500px">
+$ java -version
+	      </code></pre>
+	      <small>Get JDK SE from <a href="http://www.oracle.com/technetwork/java/javase" target="_blank">http://www.oracle.com/technetwork/java/javase</a></small>
+	      <pre><code data-trim contenteditable style="max-height:500px">
+$ android --help
+	      </code></pre>
+	      <small>Get Android SDK from <a href="http://developer.android.com/sdk" target="_blank">http://developer.android.com/sdk</a></small>
+	       <small>Add Android tools to path</small>
+	      <pre><code data-trim contenteditable style="max-height:500px">
+$ android list targets
+	      </code></pre>
+	      <small>Install Android API (i.e. API 19 = 4.4) </small>
+	      <small>Use Android SDK Manager, just type android </small>
+		  <pre><code data-trim contenteditable style="max-height:500px">
+$ adb --help
+	      </code></pre>
+	      <small>Add Android platform-tools to path</small>
+		  <pre><code data-trim contenteditable style="max-height:500px">
+$ android avd
+	      </code></pre>
+	      <small>(Optional) Create Android Device Emulator if you don't have an Android Phone or Tablet</small>
+
+	    </section> <!-- end  android requirements-->
+
+		<section> <!-- start wp requirements-->
+	      	<h3>Check Windows Phone requirements</h3>
+		    <pre><code data-trim contenteditable style="max-height:500px">
+$ msbuild /?
+	      </code></pre>
+	      <small>Download Visual Studio and Windows Phone SDK 8 <a href="http://dev.windowsphone.com/" target="_blank">dev.windowsphone.com</a></small>
+	      <small>For Windows Phone 8 SDK you need Windows 8 or higher</small>
+	      <small>Add msbuild.exe to the path if not already presetn in </small>
+	      <small>To Run the Emulator check that Computer supports hyberv, or VM is setup with the cpu flag</small>
+	    </section> <!-- end  wp requirements-->
+
 		<section> <!-- start of picks -->
       	<h2>Today's Picks</h2>
 	        <ul>
