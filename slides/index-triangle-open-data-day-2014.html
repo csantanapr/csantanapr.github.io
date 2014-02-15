@@ -206,6 +206,7 @@ $npm update -g cordova
 		        </code></pre>
 	        </section>
         </section> <!-- end of vertical slides for software install -->
+
         <section> <!-- start cordova help -->
 	      	<h3>Step 0: Read the Help</h3>
 		    <pre><code data-trim contenteditable>
@@ -242,7 +243,22 @@ $cd todd; tree todd
 	      </code></pre>
 	    </section> <!-- end cordova help -->
 
-
+       <section> <!-- start vertical requirements -->
+       	<section> <!-- start cordova add platform -->
+	      <h3>Step 3: Add Platforms</h3>
+		  <pre><code data-trim contenteditable style="max-height:500px">
+$ cordova platform add android
+Creating android project...
+Preparing android project
+$ cordova platform add ios
+Creating ios project...
+Preparing ios project
+$ls platforms
+platforms
+ ├── android
+ └── ios
+	      </code></pre>
+	    </section> <!-- end cordova add platform -->
 		<section> <!-- start platform requirements-->
 	      	<h2>Check Platform requirements</h2>
 			<ul>
@@ -288,19 +304,18 @@ $ android --help
 	      <small>Get Android SDK from <a href="http://developer.android.com/sdk" target="_blank">http://developer.android.com/sdk</a></small>
 	       <small>Add Android tools to path</small>
 	      <pre><code data-trim contenteditable style="max-height:500px">
-$ android list targets
+$ android list target
 	      </code></pre>
 	      <small>Install Android API (i.e. API 19 = 4.4) </small>
-	      <small>Use Android SDK Manager, just type android </small>
+	      <small>Use Android SDK Manager, $ android sdk</small>
 		  <pre><code data-trim contenteditable style="max-height:500px">
+$ android list avd
+	      </code></pre>
+	      <small>(Optional) Create Android Device Emulator if you don't have an Android Phone or Tablet</small>
+          <pre><code data-trim contenteditable style="max-height:500px">
 $ adb --help
 	      </code></pre>
 	      <small>Add Android platform-tools to path</small>
-		  <pre><code data-trim contenteditable style="max-height:500px">
-$ android avd
-	      </code></pre>
-	      <small>(Optional) Create Android Device Emulator if you don't have an Android Phone or Tablet</small>
-
 	    </section> <!-- end  android requirements-->
 
 		<section> <!-- start wp requirements-->
@@ -313,6 +328,51 @@ $ msbuild /?
 	      <small>Add msbuild.exe to the path if not already presetn in </small>
 	      <small>To Run the Emulator check that Computer supports hyberv, or VM is setup with the cpu flag</small>
 	    </section> <!-- end  wp requirements-->
+	</section> <!-- end vertical requirements -->
+
+        <section> <!-- start cordova add plugin -->
+	      <h3>Step 4: Add Plugins</h3>
+		  <pre><code data-trim contenteditable>
+$ cordova plugin add org.apache.cordova.device
+Fetching plugin "org.apache.cordova.device" via plugin registry
+	      </code></pre>
+	      <pre><code data-trim contenteditable>
+$ cordova plugin add org.apache.cordova.geolocation
+Fetching plugin "org.apache.cordova.geolocation" via plugin registry
+	      </code></pre>
+	      <pre><code data-trim contenteditable>
+$ cordova plugin ls
+[ 'org.apache.cordova.device',
+  'org.apache.cordova.geolocation' ]
+	      </code></pre>
+	    </section> <!-- end cordova add plugin -->
+
+	    <section> <!-- start cordova build -->
+	      <h3>Step 5: Build App (prepare + compile)</h3>
+		  <pre><code data-trim contenteditable>
+$ cordova build android
+Generating config.xml from defaults for platform "android"
+Preparing android project 
+Platform "android" compiled successfully.
+	      </code></pre>
+	      <pre><code data-trim contenteditable>
+$ cordova build ios
+Generating config.xml from defaults for platform "ios"
+Preparing ios project 
+Platform "ios" compiled successfully.
+	      </code></pre>
+	    </section> <!-- end cordova build -->
+
+	    <section> <!-- start cordova build -->
+	      <h3>Step 6: Run or Emulate App</h3>
+		  <pre><code data-trim contenteditable>
+$ cordova run android
+$ cordova emulate ios
+	      </code></pre>
+		  <img class="image" style="margin-top:0px" width="321" height="592" src="img/cordova/cordova-emulate-ios.png" alt="ios simulator">
+		  <img class="image" style="margin-top:0px" width="370" height="592" src="img/cordova/cordova-emulate-android.png" alt="ios simulator">
+		 
+	    </section> <!-- end cordova build -->
 
 		<section> <!-- start of picks -->
       	<h2>Today's Picks</h2>
