@@ -44,7 +44,7 @@
         </section>
 
         <section>
-		    	<h3>Whow is Carlos Santana?</h3>
+		    	<h3>Carlos Santana</h3>
 		      <pre><code data-trim contenteditable class="javascript" style="max-height:500px;">
 "musician" : false,
 "company": "IBM",
@@ -55,9 +55,9 @@
     "MobileFirst Architect"
 ],
 "dependencies": {
-                  "Family":   "~1.0",
-                  "Gadgets":  "~0.1",
-                  "Software": "~0.2"
+    "Family":   "~1.0",
+    "Gadgets":  "~0.1",
+    "Software": "~0.2"
 },
 "ethnicity": "geek",
 "languages": ["spanish","english","javascript"],
@@ -352,13 +352,13 @@ $ cordova plugin ls
 		  <pre><code data-trim contenteditable>
 $ cordova build android
 Generating config.xml from defaults for platform "android"
-Preparing android project 
+Preparing android project
 Platform "android" compiled successfully.
 	      </code></pre>
 	      <pre><code data-trim contenteditable>
 $ cordova build ios
 Generating config.xml from defaults for platform "ios"
-Preparing ios project 
+Preparing ios project
 Platform "ios" compiled successfully.
 	      </code></pre>
 	    </section> <!-- end cordova build -->
@@ -377,15 +377,50 @@ $ cordova emulate ios
 	    <section> <!-- start cordova emulate tips -->
 	      <h3>Tips for Emulators and Devices</h3>
 	      <ul>
-	      <li>Use Android Device instead of Emulator (very slow)</li>
-	      <li>Speed Android Emulator by using Intel HAX with x86 Image</li>
-	      <li>If emulate command fails, Emulator timeouts</li>
-	      <li>Use XCode to Run and Emulate, more reliable than cli tools</li>
-	      <li>Register with iOS Developer Program to run on Device</li>
-	      <li>Enable Android USB Debugging before running on Device</li>
+	      <li>Android</li>
+	      	<ul>
+	      		<li>Use Device instead of Emulator</li>
+	      		<li>Genymotion Emulators: use run command</li>
+	         	<li>Use Emulator with Intel HAXM and Intel Image</li>
+	         	<li>Enable Android USB Debugging before running on Device</li>
+	         	<li>Tap 7 times on About version info (4.x up)</li>
+	      	</ul>
+		  <li>Apple iOS</li>
+		  <ul>
+	      	<li>May need to run emulate command twice</li>
+	      	<li>Use XCode to Run and Emulate, easier to select type</li>
+	      	<li>Register with iOS Developer Program to run on Device</li>
+	      </ul>
+
 	      </ul>
 	    </section> <!-- end cordova emulate tips -->
 
+		<section> <!-- start cordova inpect ios -->
+	      <h3>Step 7A: Debug iOS Hybrid App</h3>
+	      <div><small>
+		  <ul>
+		  	<li>Safari Developer Tools to Inspect Simulator or Device</li>
+		  	<li>Safari->Preferences->Advance->Check Show Develop menu</li>
+		  	<li>Develop->iPhone Simulator->index.html</li>
+		  </ul>
+		 </small></div>
+
+		  <img class="image" style="margin-top:0px" width="866" height="525" src="img/cordova/cordova-inspect-ios.png" alt="ios inpect web view">
+
+	    </section> <!-- end cordova inspect ios -->
+
+	    <section> <!-- start cordova inpect ios -->
+	      <h3>Step 7B: Debug Android Hybrid App</h3>
+	      <div><small>
+		  <ul>
+		  	<li>Chrome Developer Tools Inspect Emulator or Device</li>
+		  	<li>url = chrome://inspect</li>
+		  </ul>
+		 </small></div>
+
+		  <img class="image" style="margin-top:0px" width="895" height="607" src="img/cordova/cordova-inspect-android.png" alt="ios inpect web view">
+
+	    </section> <!-- end cordova inspect ios -->
 
 		<section> <!-- start of picks -->
       	<h2>Today's Picks</h2>
