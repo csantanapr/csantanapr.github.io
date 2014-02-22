@@ -1,0 +1,10 @@
+#hashtag {
+    font-size: 0.5em;
+    position: absolute;
+    left: 0;
+}
+#tweethandle {
+    font-size: 0.5em;
+    position: absolute;
+    right: 0;
+}
