@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>csantanapr - Triangle JavaScript Meetup</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Carlos Santana">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+        <link rel="stylesheet" href="css/csantanapr.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+            <div id="hashtag">#jsmeetup</div>
+            <div id="tweethandle">@csantanapr</div>
+		<div class="slides">
+		<section>
+	        <h2>Triangle JavaScript Meetup 07.11.14</h2>
+	        <h3>Where Web Meets Native, Building Mobile Hybrid Apps Using JavaScript</h3>
+	        <p>
+	            <small>Created by <a href="http://csantana.io">Carlos Santana</a> / <a href="http://twitter.com/csantanapr">@csantanapr</a></small>
+	        </p>
+        </section>
+
+        <section>
+		    	<h3>Carlos Santana</h3>
+		      <pre><code data-trim contenteditable class="javascript" style="max-height:500px;">
+"musician" : false,
+"company": "IBM",
+"careers" : [
+    "Server Engineer",
+    "Mobile Developer",
+    "Open Source Committer",
+    "MobileFirst Architect"
+],
+"dependencies": {
+    "Family":   "~1.0",
+    "Gadgets":  "~0.1",
+    "Software": "~0.2"
+},
+"ethnicity": "geek",
+"languages": ["spanish","english","javascript"],
+"loves what it does": true,
+"In 5 years": "function () { [native code] }"
+	        </code></pre>
+		</section>
+
+		<section>
+          <blockquote>
+            Demo (UX)
+          </blockquote>
+        </section>
+
+		<section>
+          <blockquote>
+            &ldquo;So you want to build a native app?&rdquo;
+
+          </blockquote>
+          <img src="img/app_dev_approaches.jpg">
+        </section>
+
+        <section>
+          <h2>It's Not 2007 Anymore</h2>
+          <p><span class="light-text">Mobile devices  and web views have rapidly improved!</span></p>
+        </section>
+
+        <section>
+        	<img src="img/devtools/cordova_bot.png" />
+				<h1>Apache Cordova</h1>
+				<p>Open Source Project for Hybrid Development</p>
+		</section>
+
+        <section>
+          <h2>Web Technologies You Already Know and Love</h2>
+          <div style="margin-top: 70px">
+            <img src="img/html.png" class="logo" width="185" height="260">
+            <img src="img/css.png" class="logo" width="185" height="260" style="margin-left: 80px; margin-right: 80px;">
+            <img src="img/js.png" class="logo" width="185" height="260">
+          </div>
+          <p style="margin-top: 30px"><span class="light-text">
+            (You'll feel right at home)
+          </span></p>
+        </section>
+
+
+	    <section>
+	       <h3>Cordova Platforms</h3>
+	        <ul>
+	            <li>iOS</li>
+	            <li>Android</li>
+	            <li>Blackberry 10</li>
+	            <li>Windows Phone 8</li>
+	            <li>Firefox OS</li>
+	            <li>Ubuntu</li>
+	            <li>Tizen</li>
+	            <li>Amazon FireOS</li>
+	            <li>Windows 8</li>
+	        </ul>
+        </section>
+
+        <section>
+	        <h3>Cordova APIs (19 total)</h3>
+	        <ul>
+	            <li>Accelerometer</li>
+	            <li>Camera</li>
+	            <li>Compass</li>
+	            <li>Device</li>
+	            <li>Dialogs</li>
+	            <li>File</li>
+	            <li>InAppBrowser</li>
+	            <li>Geolocation</li>
+	            <li>Network-Information</li>
+	            <li>Vibration</li>
+	            <li>more here <a href="http://cordova.apache.org/docs/en/3.4.0/cordova_plugins_pluginapis.md.html#Plugin%20APIs">cordova.io</a></li>
+	        </ul>
+        </section>
+        <section>
+        	<h3>Cordova Events</h3>
+        	<ul>
+	        	<li>deviceready</li>
+				<li>pause</li>
+				<li>resume</li>
+				<li>backbutton, menubutton, searchbutton</li>
+				<li>startcallbutton</li>
+				<li>endcallbutton</li>
+				<li>volumedownbutton, volumeupbutton</li>
+				<li>batterycritical, batterylow, batterystatus</li>
+				<li>online</li>
+				<li>offline</li>
+			</ul>
+        </section>
+
+
+        <section>
+          <h3>Demo (Camera API)</h3>
+          <pre><code data-trim contenteditable style="max-height:500px">
+getPicture: function(){
+    navigator.camera.getPicture(
+        app.onSucessCamera, 
+        app.onFailCamera, 
+        { 
+            quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI 
+        });
+}
+onSucessCamera: function(imageURI) {
+    var image = document.getElementById('myImage');
+    image.src = imageURI;
+},
+onFailCamera: function(message) {
+    alert('Failed because: ' + message);
+},
+	      </code></pre>
+        </section>
+
+
+        <section>
+	        <img src="img/devtools/npm.png" width="300px" />
+	        <h2>Install Cordova</h2>
+	        
+	        <pre><code data-trim contenteditable>
+	            npm install -g cordova
+	        </code></pre>
+        </section>
+        <section> <!-- start cordova help -->
+	      	<h3>Step 0: Read the Help</h3>
+		    <pre><code data-trim contenteditable>
+$cordova help
+	      </code></pre>
+	      <a class="image" href="https://github.com/apache/cordova-cli/blob/master/doc/help.txt" target="_blank">
+			<img style="margin-top:0px"width="500" height="500" src="img/cordova/cordova-help.png" alt="cordova help text">
+		  </a>
+	    </section> <!-- end cordova help -->
+
+	    <section> <!-- start cordova create -->
+	      	<h3>Step 1: Create Multi Platform Project</h3>
+		    <pre><code data-trim contenteditable style="max-height:500px">
+$ cordova create todd com.example.todd todd
+Creating a new cordova project with name "todd" and id "com.example.todd"
+Downloading cordova library for www...
+Download complete
+$cd todd; tree todd
+.
+├── config.xml
+├── hooks
+│   └── README.md
+├── merges
+├── platforms
+├── plugins
+└── www
+    ├── css
+    │   └── index.css
+    ├── img
+    │   └── logo.png
+    ├── index.html
+    └── js
+        └── index.js
+	      </code></pre>
+	    </section> <!-- end cordova help -->
+
+       <section> <!-- start vertical requirements -->
+       	<section> <!-- start cordova add platform -->
+	      <h3>Step 3: Add Platforms</h3>
+		  <pre><code data-trim contenteditable style="max-height:500px">
+$ cordova platform add android
+Creating android project...
+Preparing android project
+$ cordova platform add ios
+Creating ios project...
+Preparing ios project
+$ls platforms
+platforms
+ ├── android
+ └── ios
+ $cordova platform ls
+Installed platforms: android 3.4.0, ios 3.4.0
+Available platforms: blackberry10, firefoxos
+	      </code></pre>
+	    </section> <!-- end cordova add platform -->
+		<section> <!-- start platform requirements-->
+	      	<h2>Check Platform requirements</h2>
+			<ul>
+				<li>iOS: Mac and iOS SDK with XCode CLI Tools</li>
+	        	<li>Android: Android SDK</li>
+	        	<li>WP8: Windows8 and Windows Phone 8 SDK</li>
+		    </ul>
+	    </section> <!-- end  platform requirements-->
+
+	    <section> <!-- start ios requirements-->
+	      	<h3>Check iOS requirements</h3>
+		    <pre><code data-trim contenteditable style="max-height:500px">
+$ xcodebuild --help
+	      </code></pre>
+	      <small>Download XCode from Mac App Store</small>
+	      <pre><code data-trim contenteditable style="max-height:500px">
+$ npm install -g ios-sim
+$ ios-sim --version
+$ 1.8.2
+	      </code></pre>
+	      <small>To Run App on iOS Simulator, instead of XCode GUI</small>
+	      	      <pre><code data-trim contenteditable style="max-height:500px">
+$ npm install -g ios-deploy
+$ ios-deploy --version
+$ 1.0.4
+	      </code></pre>
+	      <small>To Run App on Device, instead of XCode GUI</small>
+	    </section> <!-- end  ios requirements-->
+
+	    <section> <!-- start android requirements-->
+	      <h3>Check Android requirements</h3>
+		  <pre><code data-trim contenteditable style="max-height:500px">
+$ ant -version
+	      </code></pre>
+	      <small>Get Ant from <a href="http://ant.apache.org" target="_blank">http://ant.apache.org</a></small>
+	      <pre><code data-trim contenteditable style="max-height:500px">
+$ java -version
+	      </code></pre>
+	      <small>Get JDK SE from <a href="http://www.oracle.com/technetwork/java/javase" target="_blank">http://www.oracle.com/technetwork/java/javase</a></small>
+	      <pre><code data-trim contenteditable style="max-height:500px">
+$ android --help
+	      </code></pre>
+	      <small>Get Android SDK from <a href="http://developer.android.com/sdk" target="_blank">http://developer.android.com/sdk</a></small>
+	       <small>Add Android tools to path</small>
+	      <pre><code data-trim contenteditable style="max-height:500px">
+$ android list target
+	      </code></pre>
+	      <small>Install Android API (i.e. API 19 = 4.4) </small>
+	      <small>Use Android SDK Manager, $ android sdk</small>
+		  <pre><code data-trim contenteditable style="max-height:500px">
+$ android list avd
+	      </code></pre>
+	      <small>(Optional) Create Android Device Emulator if you don't have an Android Phone or Tablet</small>
+          <pre><code data-trim contenteditable style="max-height:500px">
+$ adb --help
+	      </code></pre>
+	      <small>Add Android platform-tools to path</small>
+	    </section> <!-- end  android requirements-->
+
+		<section> <!-- start wp requirements-->
+	      	<h3>Check Windows Phone requirements</h3>
+		    <pre><code data-trim contenteditable style="max-height:500px">
+$ msbuild /?
+	      </code></pre>
+	      <small>Download Visual Studio and Windows Phone SDK 8 <a href="http://dev.windowsphone.com/" target="_blank">dev.windowsphone.com</a></small>
+	      <small>For Windows Phone 8 SDK you need Windows 8 or higher</small>
+	      <small>Add msbuild.exe to the path if not already presetn in </small>
+	      <small>To Run the Emulator check that Computer supports hyperv, or VM is setup with the cpu flag</small>
+	    </section> <!-- end  wp requirements-->
+	</section> <!-- end vertical requirements -->
+
+		<section>
+            <h3>Discover core Apache Cordova plugins + 3rd party plugins at <a href="http://plugins.cordova.io/" target="_blank">plugins.cordova.io</a></h3>
+        </section>
+
+        <section> <!-- start cordova add plugin -->
+	      <h3>Step 4: Add Plugins</h3>
+		  <pre><code data-trim contenteditable>
+$ cordova plugin add org.apache.cordova.device
+Fetching plugin "org.apache.cordova.device" via plugin registry
+	      </code></pre>
+	      <pre><code data-trim contenteditable>
+$ cordova plugin add org.apache.cordova.camera
+Fetching plugin "org.apache.cordova.camera" via plugin registry
+	      </code></pre>
+	      <pre><code data-trim contenteditable>
+$ cordova plugin ls
+[ 'org.apache.cordova.device',
+  'org.apache.cordova.camera' ]
+	      </code></pre>
+	    </section> <!-- end cordova add plugin -->
+
+	    <section> <!-- start cordova build -->
+	      <h3>Step 5: Build App (prepare + compile)</h3>
+		  <pre><code data-trim contenteditable>
+$ cordova build android
+Generating config.xml from defaults for platform "android"
+Preparing android project
+Platform "android" compiled successfully.
+	      </code></pre>
+	      <pre><code data-trim contenteditable>
+$ cordova build ios
+Generating config.xml from defaults for platform "ios"
+Preparing ios project
+Platform "ios" compiled successfully.
+	      </code></pre>
+	    </section> <!-- end cordova build -->
+
+
+	    <section> <!-- start cordova run emulate -->
+	      <h3>Step 6: Run or Emulate App</h3>
+		  <pre><code data-trim contenteditable>
+$ cordova run android
+$ cordova emulate ios
+	      </code></pre>
+		  <img class="image" style="margin-top:0px" width="321" height="592" src="img/cordova/cordova-emulate-ios.png" alt="ios simulator">
+		  <img class="image" style="margin-top:0px" width="370" height="592" src="img/cordova/cordova-emulate-android.png" alt="ios simulator">
+	    </section> <!-- end cordova run emulate -->
+
+	    <section> <!-- start cordova emulate tips -->
+	      <h3>Tips for Emulators and Devices</h3>
+	      <ul>
+	      <li>Android</li>
+	      	<ul>
+	      		<li>Use Device instead of Emulator</li>
+	      		<li>Genymotion Emulators: use run command</li>
+	         	<li>Use Emulator with Intel HAXM and Intel Image</li>
+	         	<li>Enable Android USB Debugging before running on Device</li>
+	         	<li>Tap 7 times on About version info (4.x up)</li>
+	      	</ul>
+		  <li>Apple iOS</li>
+		  <ul>
+	      	<li>May need to run emulate command twice</li>
+	      	<li>Use XCode to Run and Emulate, easier to select type</li>
+	      	<li>Register with iOS Developer Program to run on Device</li>
+	      </ul>
+
+	      </ul>
+	    </section> <!-- end cordova emulate tips -->
+
+		<section> <!-- start cordova inpect ios -->
+	      <h3>Step 7A: Debug iOS Hybrid App</h3>
+	      <div><small>
+		  <ul>
+		  	<li>Safari Developer Tools to Inspect Simulator or Device</li>
+		  	<li>Safari->Preferences->Advance->Check Show Develop menu</li>
+		  	<li>Develop->iPhone Simulator->index.html</li>
+		  </ul>
+		 </small></div>
+
+		  <img class="image" style="margin-top:0px" width="866" height="525" src="img/cordova/cordova-inspect-ios.png" alt="ios inpect web view">
+
+	    </section> <!-- end cordova inspect ios -->
+
+	    <section> <!-- start cordova inpect ios -->
+	      <h3>Step 7B: Debug Android Hybrid App</h3>
+	      <div><small>
+		  <ul>
+		  	<li>Chrome Developer Tools Inspect Emulator or Device</li>
+		  	<li>url = chrome://inspect</li>
+		  </ul>
+		 </small></div>
+
+		  <img class="image" style="margin-top:0px" width="895" height="607" src="img/cordova/cordova-inspect-android.png" alt="ios inpect web view">
+
+	    </section> <!-- end cordova inspect ios -->
+
+	    <section>
+	      <h3>NodeJS Command Line Tools</h3>
+	      <ul>
+	      	<li>Easy to develop</li>
+	      	<li>Start with node APIs (FileSystem, Process)</li>
+	      	<li>npm handles install and bin path</li>
+	      	<li>cli [verb] [action] [arguments]</li>
+	      	<li>verbs and actions as node modules</li>
+	      	<li>leverage 3rd party module to parse arguments</li>
+	      	<li>Learn from other cli implementations</li>
+	      	<li>Next Step App: node-webkit, Atom-Shell, AppJS</li>
+	      <ul>
+	    </section>
+
+	    <section>
+	        <h3>Frameworks</h3>
+	        <ul>
+	            <li><a href="http://jquery.org" target="_blank">JQuery</a></li>
+	            <li><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+	            <li><a href="http://topcoat.io/" target="_blank">Topcoat</a></li>
+	            <li><a href="http://ionicframework.com/" target="_blank">Ionic</a></li>
+	            <li><a href="http://angularjs.org/" target="_blank">Angularjs</a></li>
+	            <li><a href="http://backbonejs.org/" target="_blank">Backbonejs</a></li>
+	            <li><a href="http://emberjs.com/" target="_blank">Emberjs</a></li>
+	            <li>etc.</li>
+	        </ul>
+        </section>
+
+	    <section>
+	        <h3>Cloud</h3>
+	        <ul>
+	            <li><a href="http://azure.microsoft.com/en-us/services/mobile-services" target="_blank">Windows Azure Mobile Services</a></li>
+	            <li><a href="http://aws.amazon.com/mobile/" target="_blank">Amazon Mobile Services</a></li>
+	            <li><a href="http://www.parse.com" target="_blank">Parse</a></li>
+	            <li><a href="https://ace.ng.bluemix.net/" target="_blank">Bluemix</a></li>
+	            <li>etc.</li>
+	        </ul>
+        </section>
+
+	    <section>
+	        <h3>Demo: Ionic + Bluemix</h3>
+        </section>
+
+		<section> <!-- start of picks -->
+      	<h2>Today's Picks</h2>
+	        <ul>
+	          <li>
+	        		Apache Cordova/PhoneGap
+					<ul>
+						<li><a href="http://cordova.io/" target="_blank"> cordova.io</a>
+						</li>
+					</ul>
+	        	</li>
+	        	<li>
+	        		Local Meetups (Hack/Dev/Design/Civic)
+					<ul>
+						<li><a href="http://www.meetup.com " target="_blank">meetup.com</a></li>
+					</ul>
+	        	</li>
+	        	<li>
+	        		Don't Know JS (book series by @getify)
+					<ul>
+						<li><a href="https://github.com/getify/You-Dont-Know-JS" target="_blank">github.com/getify/You-Dont-Know-JS</a></li>
+					</ul>
+	        	</li>
+	        </ul>
+      </section> <!-- end of picks -->
+        <section>
+	        <h1>Fin and Gracias</h1>
+	        <h3>BY Carlos Santana / <a href="http://twitter.com/csantanapr">@csantanapr</a></h3>
+	        <p>Slides: <a href="http://csantana.io">csantana.io</a></p>
+        </section>
+		</div><!-- end of slides -->
+
+		</div><!-- end of reveal -->
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
