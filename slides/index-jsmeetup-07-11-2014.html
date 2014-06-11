@@ -199,11 +199,11 @@ $cordova help
 	    <section> <!-- start cordova create -->
 	      	<h3>Step 1: Create Multi Platform Project</h3>
 		    <pre><code data-trim contenteditable style="max-height:500px">
-$ cordova create todd com.example.todd todd
-Creating a new cordova project with name "todd" and id "com.example.todd"
+$ cordova create jsmeetup com.example.jsmeetup trianglejs
+Creating a new cordova project with name "jsmeetup" and id "com.example.jsmeetup"
 Downloading cordova library for www...
 Download complete
-$cd todd; tree todd
+$cd jsmeetup; tree trianglejs
 .
 ├── config.xml
 ├── hooks
@@ -227,17 +227,10 @@ $cd todd; tree todd
 	      <h3>Step 3: Add Platforms</h3>
 		  <pre><code data-trim contenteditable style="max-height:500px">
 $ cordova platform add android
-Creating android project...
-Preparing android project
 $ cordova platform add ios
-Creating ios project...
-Preparing ios project
-$ls platforms
-platforms
- ├── android
- └── ios
- $cordova platform ls
-Installed platforms: android 3.4.0, ios 3.4.0
+
+$cordova platform ls
+Installed platforms: android 3.5.0, ios 3.5.0
 Available platforms: blackberry10, firefoxos
 	      </code></pre>
 	    </section> <!-- end cordova add platform -->
@@ -411,14 +404,11 @@ $ cordova emulate ios
 	    <section>
 	      <h3>NodeJS Command Line Tools</h3>
 	      <ul>
-	      	<li>Easy to develop</li>
-	      	<li>Start with node APIs (FileSystem, Process)</li>
-	      	<li>npm handles install and bin path</li>
-	      	<li>cli [verb] [action] [arguments]</li>
-	      	<li>verbs and actions as node modules</li>
-	      	<li>leverage 3rd party module to parse arguments</li>
-	      	<li>Learn from other cli implementations</li>
-	      	<li>Next Step App: node-webkit, Atom-Shell, AppJS</li>
+	      	<li class="fragment">Start with node APIs (FileSystem, Process)</li>
+	      	<li class="fragment">npm handles install and bin path</li>
+	      	<li class="fragment">cli [verb] [action] [arguments]</li>
+	      	<li class="fragment">verbs and actions as node modules</li>
+	      	<li class="fragment">leverage 3rd party module to parse arguments</li>
 	      <ul>
 	    </section>
 
@@ -435,6 +425,9 @@ $ cordova emulate ios
 	            <li>etc.</li>
 	        </ul>
         </section>
+        <section>
+	        <img src="img/ionic.png">
+        </section>
 
 	    <section>
 	        <h3>Cloud</h3>
@@ -447,33 +440,27 @@ $ cordova emulate ios
 	        </ul>
         </section>
 
+        <section>
+	        <img src="img/bluemix.png">
+        </section>
+
 	    <section>
-	        <h3>Demo: Ionic + Bluemix</h3>
+	        <h3>Demo (Ionic + Bluemix)</h3>
         </section>
 
 		<section> <!-- start of picks -->
-      	<h2>Today's Picks</h2>
-	        <ul>
-	          <li>
-	        		Apache Cordova/PhoneGap
-					<ul>
-						<li><a href="http://cordova.io/" target="_blank"> cordova.io</a>
-						</li>
-					</ul>
-	        	</li>
-	        	<li>
-	        		Local Meetups (Hack/Dev/Design/Civic)
-					<ul>
-						<li><a href="http://www.meetup.com " target="_blank">meetup.com</a></li>
-					</ul>
-	        	</li>
-	        	<li>
-	        		Don't Know JS (book series by @getify)
-					<ul>
-						<li><a href="https://github.com/getify/You-Dont-Know-JS" target="_blank">github.com/getify/You-Dont-Know-JS</a></li>
-					</ul>
-	        	</li>
-	        </ul>
+	        	<ul> 
+	            <div class="fragment">
+	        		<img class="image" style="height:200px;vertical-align:middle;margin-right:0.5em" src="img/pebble.png" >Pebble Watch JS SDK <a href="https://cloudpebble.net/" target="_blank">cloudpebble.net</a>
+	        	</div>
+	        	<div class="fragment">
+	        		<img class="image" style="height:200px;vertical-align:middle;margin-right:0.5em" src="img/meetup.jpg" >Triangle <a href="http://www.meetup.com " target="_blank">Meetups</a>
+	        	</div>
+	        	<div class="fragment">
+	        		<img class="image" style="height:200px;vertical-align:middle;margin-right:0.5em" src="img/dontknowjs.png" >Book Series <a href="https://github.com/getify/You-Dont-Know-JS" target="_blank">@getify/You-Dont-Know-JS</a>
+	        	</div>
+	        	</ul>
+	        
       </section> <!-- end of picks -->
         <section>
 	        <h1>Fin and Gracias</h1>
